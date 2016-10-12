@@ -1,0 +1,49 @@
+<html>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="../style.css" />
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<head>
+
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container width panel">
+    <div class="row">
+        <form name = "form" enctype="multipart/form-data"
+              action = "{% url 'saved_page' %}" method = "POST">
+        <div class="form-group show-border">
+            <input class="form-control" name="title" id="file-title" placeholder=" document title" type="text">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group show-border">
+            <span class="btn btn-default btn-file width-28">
+                Browse<input class="" name="file" id="file" type="file">
+            </span>
+            <input class="form-control width-70-inline" name="file-selected" id="file-selected" placeholder="No file chosen" readonly="" type="text">
+        </div>
+        <div class="form-group show-border">
+            <button class="btn btn-primary width-full-control" type="submit" id="upload-file-button" title="Upload file first, then copy markup to clipboard.">Upload</button>
+        </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%;">
+        uploading
+      </div>
+    </div>
+    <div class="row">
+        <div class="form-group show-border">
+            <button class="btn btn-primary width-full-control" data-clipboard-target="#markup" id="file-clipboard-button" title="Use Ctrl-V to paste file link into webpage, then Save Changes">Copy to clipboard</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
